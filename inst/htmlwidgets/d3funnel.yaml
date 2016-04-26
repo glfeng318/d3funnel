@@ -1,0 +1,10 @@
+dependencies:
+  - name: d3.js
+    version: 3.5.16
+    src: "lib"
+    script: d3.min.js
+  - name: d3-funnel.js
+    version: 0.7.5
+    src: "lib"
+    script: d3-funnel.min.js
+
