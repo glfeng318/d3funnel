@@ -13,7 +13,9 @@ d3funnel <- function(data, ..., chart.width = 300, chart.height = 300){
   }
   params = list(
     data = data, 
-    options = list(..., chart.height = chart.height, chart.width = chart.width)
+    #options = list(..., chart.height = chart.height, chart.width = chart.width)
+    options = jsonlite::toJSON(list(chart=list(curve=list(enabled=TRUE),bottomPinch=1),block=list(fill=list(type='gradient'))),auto_unbox=T)
+    #{"chart":{"curve":{"enabled":true},"bottomPinch":1},"block":{"fill":{"type":"gradient"}}}
   )
   params = Filter(Negate(is.null), params)
   htmlwidgets::createWidget('d3funnel', params,

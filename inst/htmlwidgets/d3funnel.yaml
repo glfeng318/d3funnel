@@ -7,4 +7,3 @@ dependencies:
     version: 0.7.5
     src: "lib"
     script: d3-funnel.min.js
-

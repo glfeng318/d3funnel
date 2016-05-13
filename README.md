@@ -17,13 +17,16 @@ devtools::install_github('funnng/d3funnel')
 It is pretty simple
 
 ```r
-# ui
-d3funnelOutput('plot')
-
-# server
-output$plot <- renderD3funnel({
-  d3funnel(data.frame(a=c('vist','order','paid'), b=c(116634,2007,435)))
-})
+library("shiny")
+library("d3funnel")
+shinyApp(
+  ui = fluidPage(d3funnelOutput('plot')),
+  server = function(input, output) {
+    output$plot <- renderD3funnel({
+      d3funnel(data.frame(a=c('vist','order','paid'), b=c(116634,2007,435)))
+    })
+  }
+)
 ```
 
 ### options
